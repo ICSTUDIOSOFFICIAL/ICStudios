@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IC Studios - Home</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: Verdana, Arial, sans-serif;
+      font-size: 14px;
+    }
+
+    table.layout {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    td.header {
+      background: #222;
+      padding: 0;
+    }
+
+    .header-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 20px;
+    }
+
+    .header-icon {
+      max-height: 80px;
+      width: auto;
+    }
+
+    .header-center {
+      text-align: center;
+      flex-grow: 1;
+    }
+
+    .header-center img {
+      display: block;
+      margin: 0 auto;
+    }
+
+    .main-logo {
+      max-height: 100px;
+    }
+
+    .motto {
+      max-height: 40px;
+      margin-top: 5px;
+    }
+
+    td.nav {
+      background: #222;
+      width: 180px;
+      vertical-align: top;
+      padding: 20px 15px;
+      border-right: 2px solid #444;
+    }
+
+    .nav-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-list li {
+      margin-bottom: 10px;
+    }
+
+    .nav-list a {
+      display: block;
+      padding: 6px 10px;
+      background: #333;
+      border: 1px solid #444;
+      border-radius: 4px;
+      font-family: "Courier New", monospace;
+      font-size: 14px;
+      color: #99ccff;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .nav-list a:hover {
+      background: #444;
+      border-color: #66aaff;
+      color: #66aaff;
+    }
+
+    td.content {
+      background: #000;
+      padding: 20px;
+      vertical-align: top;
+    }
+  </style>
+</head>
+<body>
+  <table class="layout" cellspacing="0" cellpadding="10">
+    <!-- Header -->
+    <tr>
+      <td class="header" colspan="2">
+        <div class="header-flex">
+
+          <div class="header-center">
+            <img src="images/ICStudios.png" alt="IC Studios Logo" class="main-logo">
+            <img src="images/ICStudiosMotto.png" alt="IC Studios Motto" class="motto">
+          </div>
+      </td>
+    </tr>
+
+    <!-- Sidebar + Content -->
+    <tr>
+      <td class="nav">
+        <ul class="nav-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="games.html">Games</a></li>
+          <li><a href="OS.html">Operating System</a></li>
+          <li><a href="screenshots.html">Screenshots</a></li>
+          <li><a href="downloads.html">Downloads</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="soundtracks.html">Soundtracks</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </td>
+
+      <td class="content">
+        <h1>Welcome to the IC Studios!</h1>
+
+        <p><b>Latest Release:</b> Version&nbsp;1.0 of <i>TESTLABS VR</i> is now available for download!</p>
+
+        <h2>Who We Are</h2>
+        <p>
+          IC Studios is a small, independent game development team passionate about blending retro
+          aesthetics with modern gameplay. We explore bold themes, experimental design, and immersive
+          storytelling to craft unique experiences across genres.
+        </p>
+
+        <h2>What You'll Find Here</h2>
+        <ul>
+          <li><b>Games:</b>Explore our catalogue of games and our own custom made linux distro!</li>
+          <li><b>Screenshots:</b> Preview each feature of the OS and our games in the other parts of the website!</li>
+          <li><b>Soundtracks:</b> Listen to our custom made soundtracks that set the stage of the game!</li>
+          <li><b>Developer Notes:</b> Read the README.md file to learn about patch updates and other upcoming features!</li>
+        </ul>
+
+        <h2>Featured Projects</h2>
+        <ul>
+          <li><b>TESTLABS VR:</b> A physics-driven narrative VR sim with a twisted lab story.</li>
+          <li><b>Shadowfall - Dawn of the Eclipse:</b> A mysterious 2D platformer with haunting lore.</li>
+          <li><b>City by Fate:</b> A mature city builder blending urban strategy and adult storytelling.</li>
+        </ul>
+
+        <p>
+          Use the sidebar to explore our games, contact us directly, or browse media and updates.
+          Thanks for stopping by! your support fuels everything we build.
+        </p>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
