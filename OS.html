@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IC Studios – Operating System</title>
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: 'Segoe UI', Verdana, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    header {
+      background: linear-gradient(to bottom, #222, #111);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .header-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .main-logo {
+      max-height: 100px;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+      transition: transform 0.3s ease;
+    }
+
+    .main-logo:hover {
+      transform: scale(1.03);
+    }
+
+    .motto {
+      max-height: 40px;
+      margin-top: 8px;
+      opacity: 0.9;
+    }
+
+    .layout {
+      flex: 1;
+      display: flex;
+      min-height: 0;
+    }
+
+    nav {
+      background: linear-gradient(to bottom, #222, #111);
+      width: 200px;
+      padding: 25px 20px;
+      border-right: 2px solid #333;
+      box-shadow: inset -2px 0 6px rgba(0,0,0,0.4);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      flex-grow: 1;
+    }
+
+    .nav-list li {
+      margin-bottom: 12px;
+    }
+
+    .nav-list a {
+      display: block;
+      padding: 10px 14px;
+      background: #333;
+      border: 1px solid #444;
+      border-radius: 6px;
+      font-family: "Courier New", monospace;
+      font-size: 14px;
+      color: #99ccff;
+      text-decoration: none;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+      transition: background 0.25s, border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+    }
+
+    .nav-list a:hover {
+      background: #444;
+      border-color: #66aaff;
+      color: #66aaff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    main {
+      flex: 1;
+      background: #000;
+      padding: 30px;
+      overflow-y: auto;
+    }
+
+    h1, h2 {
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-top: 25px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #444;
+      padding-bottom: 4px;
+    }
+
+    p, li {
+      font-size: 15px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    a.btn-download {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 18px;
+      background: linear-gradient(to bottom, #666, #555);
+      color: white;
+      border: 1px solid #444;
+      border-radius: 6px;
+      font-size: 15px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+      transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+    }
+
+    a.btn-download:hover {
+      background: linear-gradient(to bottom, #45a049, #3a8e3e);
+      transform: scale(1.05);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-center">
+      <img src="images/ICStudios.png" alt="IC Studios Logo" class="main-logo">
+      <img src="images/ICStudiosMotto.png" alt="IC Studios Motto" class="motto">
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="games.html">Games</a></li>
+        <li><a href="OS.html">Operating System</a></li>
+        <li><a href="screenshots.html">Screenshots</a></li>
+        <li><a href="downloads.html">Downloads</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="soundtracks.html">Soundtracks</a></li>
+        <li><a href="contact.html">Contact</a></li>
+	<li><a href="discord.html">Discord</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <h1>Welcome to IC Studios Operating System Download Page!</h1>
+
+      <p><b>Latest Release:</b> Version&nbsp;1.0 of <i>TESTLABS VR</i> is now available for download!</p>
+
+      <h2>Who We Are</h2>
+      <p>
+        IC Studios is a small, independent game and OS development team passionate about blending retro aesthetics with modern computing. 
+        We aim to bring convenience and performance together through clean, experimental design.
+      </p>
+
+      <h2>IC Studios Operating System</h2>
+      <ul>
+        <li><b>Introduction:</b> Dive into our custom-made Operating System, designed for user convenience and compatibility.</li>
+        <li><b>Preview Features:</b> Preview each feature of the OS throughout the page.</li>
+        <li><b>Supported Features:</b> Supports multiple file types for convenience and accessibility.</li>
+        <li><b>Developer Notes:</b> Check the README.md file for patch updates and upcoming features.</li>
+      </ul>
+
+      <a href="Download ISO.html" class="btn-download">Download ISO</a>
+
+      <p style="margin-top: 20px;">
+        Use the sidebar to explore our games, operating systems, media, and contact options.
+        Thank you for visiting — your support helps us create better digital tools and experiences.
+      </p>
+    </main>
+  </div>
+</body>
+</html>

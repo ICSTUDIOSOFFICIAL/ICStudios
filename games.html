@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Games – IC Studios</title>
+  <style>
+    body {
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: 'Segoe UI', Verdana, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      opacity: 0;
+      animation: fadeIn 0.6s ease-out forwards;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    header {
+      background: linear-gradient(to bottom, #222, #111);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .header-center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .main-logo {
+      max-height: 100px;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+      transition: transform 0.3s ease;
+    }
+    .main-logo:hover {
+      transform: scale(1.03);
+    }
+    .motto {
+      max-height: 40px;
+      margin-top: 8px;
+      opacity: 0.9;
+    }
+    .layout {
+      flex: 1;
+      display: flex;
+      min-height: 0;
+    }
+    nav {
+      background: linear-gradient(to bottom, #222, #111);
+      width: 200px;
+      padding: 25px 20px;
+      border-right: 2px solid #333;
+      box-shadow: inset -2px 0 6px rgba(0,0,0,0.4);
+      display: flex;
+      flex-direction: column;
+    }
+    .nav-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      flex-grow: 1;
+    }
+    .nav-list li {
+      margin-bottom: 12px;
+    }
+    .nav-list a {
+      display: block;
+      padding: 10px 14px;
+      background: #333;
+      border: 1px solid #444;
+      border-radius: 6px;
+      font-family: "Courier New", monospace;
+      font-size: 14px;
+      color: #99ccff;
+      text-decoration: none;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+      transition: background 0.25s, border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+    }
+    .nav-list a:hover {
+      background: #444;
+      border-color: #66aaff;
+      color: #66aaff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    main {
+      flex: 1;
+      background: #000;
+      padding: 30px;
+      overflow-y: auto;
+    }
+    h1 {
+      font-size: 28px;
+      margin-top: 0;
+      margin-bottom: 24px;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+      font-family: "Courier New", monospace;
+      color: #99ccff;
+    }
+    .game-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+    .game-link {
+      text-decoration: none;
+      color: inherit;
+    }
+    .game-card {
+      background: #111;
+      border: 2px solid #444;
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 0 12px #222;
+      text-align: center;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .game-link:hover .game-card {
+      border-color: #66aaff;
+      box-shadow: 0 0 18px #66aaff;
+    }
+    .game-card img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      image-rendering: pixelated;
+      user-select: none;
+      pointer-events: none;
+    }
+    .game-title {
+      margin-top: 12px;
+      font: 18px "Courier New", monospace;
+      color: #99ccff;
+    }
+    .game-desc {
+      font-size: 14px;
+      margin-top: 6px;
+      color: #ccc;
+      font-family: Verdana, Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-center">
+      <img src="images/ICStudios.png" alt="IC Studios Logo" class="main-logo" />
+      <img src="images/ICStudiosMotto.png" alt="IC Studios Motto" class="motto" />
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="games.html">Games</a></li>
+        <li><a href="screenshots.html">Screenshots</a></li>
+        <li><a href="downloads.html">Downloads</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="soundtracks.html">Soundtracks</a></li>
+        <li><a href="contact.html">Contact</a></li>
+	<li><a href="discord.html">Discord</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <h1>Our Games</h1>
+      <div class="game-list">
+
+        <!-- TESTLABS VR -->
+        <a href="games/testlabs/index.html" class="game-link">
+          <div class="game-card">
+            <img src="images/games/starfire.png" alt="TESTLABS VR" />
+            <div class="game-title">TESTLABS VR</div>
+            <div class="game-desc">A story-based physics sim</div>
+          </div>
+        </a>
+
+        <!-- Shadowfall -->
+        <a href="games/shadowfall/index.html" class="game-link">
+          <div class="game-card">
+            <img src="images/games/shadowfall.png" alt="Shadowfall: Dawn of the Eclipse" />
+            <div class="game-title">Shadowfall: Dawn of the Eclipse</div>
+            <div class="game-desc">A dark 2D action platformer filled with mystery and chaos.</div>
+          </div>
+        </a>
+
+        <!-- City by Fate -->
+        <a href="games/citybyfate/index.html" class="game-link">
+          <div class="game-card">
+            <img src="images/games/citybyfate.png" alt="City by Fate" />
+            <div class="game-title">City by Fate</div>
+            <div class="game-desc">Will the city grow and prosper? Or will the city crumble to dust? It is up to you to decide.</div>
+          </div>
+        </a>
+
+        <!-- MindWay -->
+        <a href="games/MindWay/index.html" class="game-link">
+          <div class="game-card">
+            <img src="images/games/MindWay.png" alt="MindWay" />
+            <div class="game-title">MindWay</div>
+            <div class="game-desc">NO DESCRIPTION</div>
+          </div>
+        </a>
+
+        <!-- PhysicsDEMO -->
+        <a href="games/PhysicsDEMO/index.html" class="game-link">
+          <div class="game-card">
+            <img src="images/games/Physdem.png" alt="Physdem" />
+            <div class="game-title">Physics DEMO</div>
+            <div class="game-desc">NO DESCRIPTION</div>
+          </div>
+        </a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

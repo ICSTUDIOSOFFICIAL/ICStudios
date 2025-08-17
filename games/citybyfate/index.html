@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>City by Fate – IC Studios</title>
+  <link rel="stylesheet" href="../../style.css">
+  <style>
+    .content img {
+      max-width: 100%;
+      border-radius: 4px;
+      image-rendering: pixelated;
+      margin: 10px 0;
+    }
+    .content h2 {
+      color: #99ccff;
+      font-family: "Courier New", monospace;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 20px;
+      font-size: 13px;
+      color: #99ccff;
+      text-decoration: none;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    /* --- Mods area --- */
+    .mod-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+      gap: 18px;
+      margin: 10px 0 30px;
+    }
+    .mod-card {
+      background:#111;
+      border:2px solid #444;
+      padding:12px;
+      border-radius:6px;
+      box-shadow:0 0 8px #222;
+    }
+    .mod-card:hover {
+      border-color:#66aaff;
+      box-shadow:0 0 14px #66aaff;
+    }
+    .mod-card h3 {
+      margin:0 0 6px;
+      color:#99ccff;
+      font-family:"Courier New",monospace;
+      font-size:16px;
+    }
+    .mod-card p { font-size:13px; margin:4px 0 10px; }
+    .mod-card a {
+      color:#00ccff;
+      text-decoration:none;
+      font-size:13px;
+    }
+    .mod-card a:hover { text-decoration:underline; }
+
+    /* New professional sidebar */
+    td.nav {
+      background: #222;
+      width: 180px;
+      vertical-align: top;
+      padding: 20px 15px;
+      border-right: 2px solid #444;
+    }
+    .nav-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .nav-list li {
+      margin-bottom: 10px;
+    }
+    .nav-list a {
+      display: block;
+      padding: 6px 10px;
+      background: #333;
+      border: 1px solid #444;
+      border-radius: 4px;
+      font-family: "Courier New", monospace;
+      font-size: 14px;
+      color: #99ccff;
+      text-decoration: none;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .nav-list a:hover {
+      background: #444;
+      border-color: #66aaff;
+      color: #66aaff;
+    }
+  </style>
+</head>
+<body>
+  <table class="layout" cellspacing="0" cellpadding="10">
+    <!-- Header -->
+    <tr>
+      <td class="header" colspan="2" style="text-align:center; padding:10px 0;">
+        <img src="../../images/ICStudios.png" alt="IC Studios Logo" style="max-height:100px; width:auto;">
+      </td>
+    </tr>
+
+    <!-- Sidebar + Content -->
+    <tr>
+      <td class="nav">
+        <ul class="nav-list">
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="../../games.html">Games</a></li>
+          <li><a href="../../screenshots.html">Screenshots</a></li>
+          <li><a href="../../downloads.html">Downloads</a></li>
+          <li><a href="../../about.html">About</a></li>
+          <li><a href="../../soundtracks.html">Soundtracks</a></li>
+          <li><a href="../../contact.html">Contact</a></li>
+        </ul>
+      </td>
+
+      <td class="content">
+        <h1>City by Fate</h1>
+        <p><b>Genre:</b> City-Building Sim / Adult Narrative</p>
+        <p><b>Platform:</b> Windows</p>
+        <p><b>Status:</b> In Development</p>
+
+        <h2>Overview</h2>
+        <p>
+          One of the cities of Eros has asked the God of Fate for help. Their citizens have grown
+          restless and unhappy. But with his hands full quelling the lingering turmoil from the
+          <i>Last Country War</i>, he sent you in his place.
+        </p>
+        <p>
+          As the appointed Overseer, you’ll guide this struggling city toward prosperity — or ruin.
+          Shape their infrastructure, enforce your will, and manage both desires and disobedience.
+          Will they worship you as a savior? Or curse your name as their world collapses?
+        </p>
+
+        <!-- Key art -->
+        <img src="../../images/games/citybyfate.png" alt="City by Fate Key Art">
+
+        <h2>Features</h2>
+        <ul>
+          <li>NSFW pixel art simulation with moral choices and branching scenarios.</li>
+          <li>Dynamic citizen satisfaction and resistance mechanics.</li>
+          <li>Erotic encounters woven into the city's political and social balance.</li>
+          <li>Replayable campaign with multiple endings.</li>
+        </ul>
+
+        <!-- Screenshot -->
+        <h2>Screenshot</h2>
+        <img src="../../images/screenshots/citybyfate/street.png" alt="Street View – City by Fate">
+
+        <!-- Mods Section -->
+        <h2>Mods</h2>
+        <p>Drop ZIPs in <code>citybyfate/mods/</code> and they’ll appear ingame.</p>
+
+        <div class="mod-list">
+          <div class="mod-card">
+            <h3>TEMPLATE MOD</h3>
+            <p>DESCRIPTION TEXT.</p>
+            <a href="mods/prosperity_boost.zip">Download Mod</a>
+          </div>
+
+          <div class="mod-card">
+            <h3>TEMPLATE MOD</h3>
+            <p>DESCRIPTION TEXT.</p>
+            <a href="mods/chaos_rising.zip">Download Mod</a>
+          </div>
+
+          <div class="mod-card">
+            <h3>TEMPLATE MOD</h3>
+            <p>DESCRIPTION TEXT.</p>
+            <a href="mods/chaos_rising.zip">Download Mod</a>
+          </div>
+
+          <div class="mod-card">
+            <h3>IC Studios Modding Application (Universal)</h3>
+            <p>Mod Installer for all IC Studios software.</p>
+            <a href="mods/visual_pack.zip">Download Software</a>
+          </div>
+        </div>
+
+        <a href="../../games.html" class="back-link">&larr; Back to Games</a>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
