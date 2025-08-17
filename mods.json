@@ -14,19 +14,19 @@
   {
     "name": "Nightshift Mode",
     "description": "Disable gravity in a special chamber.",
-    "file": "mods/zero_gravity_room.zip",
+    "file": "mods/Nightshift.zip",
     "game": "TESTLABS VR"
   },
   {
     "name": "Chaos Rising",
     "description": "Disable gravity in a special chamber.",
-    "file": "mods/zero_gravity_room.zip",
+    "file": "mods/ChaosRising.zip",
     "game": "TESTLABS VR"
   },
   {
     "name": "Visual FX Pack",
     "description": "Disable gravity in a special chamber.",
-    "file": "mods/zero_gravity_room.zip",
+    "file": "mods/VFX.zip",
     "game": "TESTLABS VR"
   }
 ]
