@@ -4,8 +4,10 @@
   <title>IC Studios - Home</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
+      height: 100%; /* Make body fill the viewport */
       background: #000;
       color: #fff;
       font-family: Verdana, Arial, sans-serif;
@@ -14,6 +16,7 @@
 
     table.layout {
       width: 100%;
+      height: 100%; /* Make table fill the viewport */
       border-collapse: collapse;
     }
 
@@ -53,15 +56,14 @@
       margin-top: 5px;
     }
 
-
-td.nav {
-  background: #222;
-  width: 180px;
-  vertical-align: top;
-  padding: 20px 15px;
-  border-right: 2px solid #444;
-  height: 100%; /* Ensure it fills the table row */
-}
+    td.nav {
+      background: #222;
+      width: 180px;
+      vertical-align: top;
+      padding: 20px 15px;
+      border-right: 2px solid #444;
+      height: 100%; /* Make sidebar fill its row */
+    }
 
     .nav-list {
       list-style: none;
@@ -105,16 +107,16 @@ td.nav {
     <tr>
       <td class="header" colspan="2">
         <div class="header-flex">
-
           <div class="header-center">
             <img src="images/ICStudios.png" alt="IC Studios Logo" class="main-logo">
             <img src="images/ICStudiosMotto.png" alt="IC Studios Motto" class="motto">
           </div>
+        </div>
       </td>
     </tr>
 
     <!-- Sidebar + Content -->
-    <tr>
+    <tr style="height:100%;">
       <td class="nav">
         <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
@@ -142,7 +144,7 @@ td.nav {
 
         <h2>What You'll Find Here</h2>
         <ul>
-          <li><b>Games:</b>Explore our catalogue of games and our own custom made linux distro!</li>
+          <li><b>Games:</b> Explore our catalogue of games and our own custom made linux distro!</li>
           <li><b>Screenshots:</b> Preview each feature of the OS and our games in the other parts of the website!</li>
           <li><b>Soundtracks:</b> Listen to our custom made soundtracks that set the stage of the game!</li>
           <li><b>Developer Notes:</b> Read the README.md file to learn about patch updates and other upcoming features!</li>
@@ -157,7 +159,7 @@ td.nav {
 
         <p>
           Use the sidebar to explore our games, contact us directly, or browse media and updates.
-          Thanks for stopping by! your support fuels everything we build.
+          Thanks for stopping by! Your support fuels everything we build.
         </p>
       </td>
     </tr>
