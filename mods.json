@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Lab Lights Override",
+    "description": "Replace facility lighting with red emergency glow.",
+    "file": "mods/lab_lights_override.zip",
+    "game": "TESTLABS VR"
+  },
+  {
+    "name": "Zero Gravity Room",
+    "description": "Disable gravity in a special chamber.",
+    "file": "mods/zero_gravity_room.zip",
+    "game": "TESTLABS VR"
+  },
+  {
+    "name": "Nightshift Mode",
+    "description": "Disable gravity in a special chamber.",
+    "file": "mods/zero_gravity_room.zip",
+    "game": "TESTLABS VR"
+  },
+  {
+    "name": "Chaos Rising",
+    "description": "Disable gravity in a special chamber.",
+    "file": "mods/zero_gravity_room.zip",
+    "game": "TESTLABS VR"
+  },
+  {
+    "name": "Visual FX Pack",
+    "description": "Disable gravity in a special chamber.",
+    "file": "mods/zero_gravity_room.zip",
+    "game": "TESTLABS VR"
+  }
+]
