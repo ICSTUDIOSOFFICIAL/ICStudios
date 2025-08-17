@@ -2,26 +2,30 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Downloads – IC Studios</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Downloads â€“ IC Studios</title>
   <style>
-    body {
+    html, body {
       margin: 0;
+      padding: 0;
+      height: 100%;
       background: #000;
       color: #fff;
       font-family: 'Segoe UI', Verdana, Arial, sans-serif;
       font-size: 15px;
       line-height: 1.6;
-      min-height: 100vh;
       display: flex;
       flex-direction: column;
+      min-height: 100vh;
       opacity: 0;
       animation: fadeIn 0.6s ease-out forwards;
     }
+
     @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
+
     header {
       background: linear-gradient(to bottom, #222, #111);
       box-shadow: 0 2px 6px rgba(0,0,0,0.6);
@@ -29,29 +33,35 @@
       display: flex;
       justify-content: center;
     }
+
     .header-center {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
+
     .main-logo {
       max-height: 100px;
       filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
       transition: transform 0.3s ease;
     }
+
     .main-logo:hover {
       transform: scale(1.03);
     }
+
     .motto {
       max-height: 40px;
       margin-top: 8px;
       opacity: 0.9;
     }
+
     .layout {
       flex: 1;
       display: flex;
       min-height: 0;
     }
+
     nav {
       background: linear-gradient(to bottom, #222, #111);
       width: 200px;
@@ -61,15 +71,18 @@
       display: flex;
       flex-direction: column;
     }
+
     .nav-list {
       list-style: none;
       margin: 0;
       padding: 0;
       flex-grow: 1;
     }
+
     .nav-list li {
       margin-bottom: 12px;
     }
+
     .nav-list a {
       display: block;
       padding: 10px 14px;
@@ -83,6 +96,7 @@
       box-shadow: 0 1px 4px rgba(0,0,0,0.4);
       transition: background 0.25s, border-color 0.25s, transform 0.25s, box-shadow 0.25s;
     }
+
     .nav-list a:hover {
       background: #444;
       border-color: #66aaff;
@@ -90,32 +104,36 @@
       transform: translateY(-2px);
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
+
     main {
       flex: 1;
       background: #000;
       padding: 30px;
       overflow-y: auto;
     }
-    h1 {
+
+    main h1 {
       font-size: 28px;
       margin-top: 0;
       margin-bottom: 20px;
       text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+      font-family: "Courier New", monospace;
+      color: #99ccff;
     }
-    p {
-      max-width: 700px;
+
+    main p {
       font-size: 16px;
-      line-height: 1.5;
-      margin-bottom: 30px;
+      max-width: 700px;
+      margin-bottom: 20px;
     }
-    /* Steam-style vertical tiles container */
+
     .game-tiles {
       display: flex;
-      gap: 30px;
       flex-wrap: wrap;
+      gap: 30px;
       max-width: 1000px;
     }
-    /* Individual tile link */
+
     .game-tile {
       display: block;
       width: 180px;
@@ -126,11 +144,12 @@
       box-shadow: 0 0 10px #222;
       transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
+
     .game-tile:hover {
       border-color: #66aaff;
       box-shadow: 0 0 20px #66aaff;
     }
-    /* The image inside the tile fills entire tile, cropped if needed */
+
     .game-tile img {
       width: 100%;
       height: 100%;
@@ -161,7 +180,7 @@
         <li><a href="about.html">About</a></li>
         <li><a href="soundtracks.html">Soundtracks</a></li>
         <li><a href="contact.html">Contact</a></li>
-	<li><a href="discord.html">Discord</a></li>
+        <li><a href="discord.html">Discord</a></li>
       </ul>
     </nav>
 
@@ -174,7 +193,7 @@
           <img src="images/games/testlabs.png" alt="TestLabs VR Key Art" />
         </a>
 
-        <a href="games/shadowfall/index.html" class="game-tile" title="Shadowfall – Dawn of the Eclipse">
+        <a href="games/shadowfall/index.html" class="game-tile" title="Shadowfall â€“ Dawn of the Eclipse">
           <img src="images/games/shadowfall.png" alt="Shadowfall Key Art" />
         </a>
 
