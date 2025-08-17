@@ -7,39 +7,31 @@
     html, body {
       margin: 0;
       padding: 0;
-      height: 100%; /* Make body fill the viewport */
+      height: 100%;
       background: #000;
       color: #fff;
       font-family: Verdana, Arial, sans-serif;
       font-size: 14px;
     }
 
-    table.layout {
-      width: 100%;
-      height: 100%; /* Make table fill the viewport */
-      border-collapse: collapse;
-    }
-
-    td.header {
-      background: #222;
-      padding: 0;
-    }
-
-    .header-flex {
+    /* Container for entire page */
+    .page-container {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 20px;
+      flex-direction: column;
+      height: 100%;
     }
 
-    .header-icon {
-      max-height: 80px;
-      width: auto;
+    /* Header */
+    .header {
+      background: #222;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .header-center {
       text-align: center;
-      flex-grow: 1;
     }
 
     .header-center img {
@@ -56,19 +48,27 @@
       margin-top: 5px;
     }
 
-    td.nav {
+    /* Main content area */
+    .main {
+      display: flex;
+      flex: 1; /* Fills the remaining height */
+    }
+
+    /* Sidebar */
+    .nav {
       background: #222;
       width: 180px;
-      vertical-align: top;
       padding: 20px 15px;
       border-right: 2px solid #444;
-      height: 100%; /* Make sidebar fill its row */
+      display: flex;
+      flex-direction: column;
     }
 
     .nav-list {
       list-style: none;
       margin: 0;
       padding: 0;
+      flex: 1; /* Pushes the sidebar to fill height */
     }
 
     .nav-list li {
@@ -94,30 +94,28 @@
       color: #66aaff;
     }
 
-    td.content {
+    /* Content */
+    .content {
+      flex: 1;
       background: #000;
       padding: 20px;
-      vertical-align: top;
+      overflow-y: auto; /* Scrolls if content is taller than viewport */
     }
   </style>
 </head>
 <body>
-  <table class="layout" cellspacing="0" cellpadding="10">
+  <div class="page-container">
     <!-- Header -->
-    <tr>
-      <td class="header" colspan="2">
-        <div class="header-flex">
-          <div class="header-center">
-            <img src="images/ICStudios.png" alt="IC Studios Logo" class="main-logo">
-            <img src="images/ICStudiosMotto.png" alt="IC Studios Motto" class="motto">
-          </div>
-        </div>
-      </td>
-    </tr>
+    <div class="header">
+      <div class="header-center">
+        <img src="images/ICStudios.png" alt="IC Studios Logo" class="main-logo">
+        <img src="images/ICStudiosMotto.png" alt="IC Studios Motto" class="motto">
+      </div>
+    </div>
 
     <!-- Sidebar + Content -->
-    <tr style="height:100%;">
-      <td class="nav">
+    <div class="main">
+      <nav class="nav">
         <ul class="nav-list">
           <li><a href="index.html">Home</a></li>
           <li><a href="games.html">Games</a></li>
@@ -128,9 +126,9 @@
           <li><a href="soundtracks.html">Soundtracks</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
-      </td>
+      </nav>
 
-      <td class="content">
+      <div class="content">
         <h1>Welcome to the IC Studios!</h1>
 
         <p><b>Latest Release:</b> Version&nbsp;1.0 of <i>TESTLABS VR</i> is now available for download!</p>
@@ -161,8 +159,8 @@
           Use the sidebar to explore our games, contact us directly, or browse media and updates.
           Thanks for stopping by! Your support fuels everything we build.
         </p>
-      </td>
-    </tr>
-  </table>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
