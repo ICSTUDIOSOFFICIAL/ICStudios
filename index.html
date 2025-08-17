@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>IC Studios - Home</title>
-  <link rel="stylesheet" href="style.css">
   <style>
     html, body {
       margin: 0;
@@ -14,7 +14,7 @@
       font-size: 14px;
     }
 
-    /* Container for entire page */
+    /* Page container */
     .page-container {
       display: flex;
       flex-direction: column;
@@ -51,7 +51,7 @@
     /* Main content area */
     .main {
       display: flex;
-      flex: 1; /* Fills the remaining height */
+      flex: 1; /* Fill remaining height */
     }
 
     /* Sidebar */
@@ -68,7 +68,7 @@
       list-style: none;
       margin: 0;
       padding: 0;
-      flex: 1; /* Pushes the sidebar to fill height */
+      flex: 1; /* Fill height of sidebar */
     }
 
     .nav-list li {
@@ -99,7 +99,14 @@
       flex: 1;
       background: #000;
       padding: 20px;
-      overflow-y: auto; /* Scrolls if content is taller than viewport */
+      overflow-y: auto; /* Scroll if content too tall */
+    }
+
+    /* Headline style for news */
+    .content h1 {
+      color: #66ccff;
+      font-size: 24px;
+      margin-bottom: 15px;
     }
   </style>
 </head>
@@ -129,9 +136,9 @@
       </nav>
 
       <div class="content">
-        <h1>Welcome to the IC Studios!</h1>
+        <h1>Welcome to IC STUDIOS!</h1>
 
-        <p><b>Latest Release:</b> Version&nbsp;1.0 of <i>TESTLABS VR</i> is now available for download!</p>
+        <p><b>IC STUDIOS Website gone live! Welcome to IC STUDIOS!</p>
 
         <h2>Who We Are</h2>
         <p>
