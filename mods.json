@@ -13,20 +13,26 @@
   },
   {
     "Name": "Nightshift Mode",
-    "Description": "Disable gravity in a special chamber.",
+    "Description": "Completely strip your ability to see for an extra challenge!",
     "Url": "mods/Nightshift.zip",
     "Game": "TESTLABS VR"
   },
   {
     "Name": "Chaos Rising",
-    "Description": "Disable gravity in a special chamber.",
+    "Description": "Make your game harder by increasing enemy spawn count!",
     "Url": "mods/ChaosRising.zip",
-    "Game": "TESTLABS VR"
+    "Game": "Shadowfall D.O.T.E"
   },
   {
     "Name": "Visual FX Pack",
-    "Description": "Disable gravity in a special chamber.",
+    "Description": "Improve the visual artstyle of the game by introducing higher quality lighting!",
     "Url": "mods/VFX.zip",
-    "Game": "TESTLABS VR"
+    "Game": "Shadowfall D.O.T.E"
+  },
+  {
+    "Name": "Mental Breakdown",
+    "Description": "Make the difficulty of the game way harder",
+    "Url": "mods/VFX.zip",
+    "Game": "OVERLOCK"
   }
 ]
