@@ -9,7 +9,7 @@ We make the kind of stuff we *want* to play – projects that feel raw, experime
 ## 🎮 What We Do
 
 - **Games** – Mostly PC-based, sometimes dipping into VR. We like retro shooters, surreal worlds, and sandbox environments.  
-- **Experiments** – Half-finished ideas, fake operating systems, interactive art, prototypes that may or may not grow into full projects.  
+- **Experiments** – Half-finished ideas, operating systems, interactive art, prototypes that may or may not grow into full projects.  
 - **Sound & Atmosphere** – Music and soundtracks are just as important to us as the visuals. Expect moody tracks, unsettling ambience, and a few surprises.  
 - **Community Mods** – We want our games to be moddable and open. If you can break it, hack it, or twist it, you’re already one of us.  
 
