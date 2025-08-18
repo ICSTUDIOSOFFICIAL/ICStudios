@@ -1,7 +1,7 @@
 // sound.js
 document.addEventListener("DOMContentLoaded", () => {
   const audio = document.createElement("audio");
-  audio.src = "click.mp3"; // file is in root
+  audio.src = "/ICStudios/click.mp3"; // absolute path for GitHub Pages
   audio.preload = "auto";
   document.body.appendChild(audio);
 
@@ -9,7 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("button, .sidebar a").forEach(el => {
     el.addEventListener("click", () => {
       audio.currentTime = 0;
-      audio.play();
+      audio.play().catch(err => {
+        console.error("Sound play failed:", err);
+      });
     });
   });
 });
