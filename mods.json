@@ -1,32 +1,32 @@
 [
   {
-    "name": "Lab Lights Override",
-    "description": "Replace facility lighting with red emergency glow.",
-    "file": "mods/lab_lights_override.zip",
-    "game": "TESTLABS VR"
+    "Name": "Lab Lights Override",
+    "Description": "Replace facility lighting with red emergency glow.",
+    "Url": "mods/lab_lights_override.zip",
+    "Game": "TESTLABS VR"
   },
   {
-    "name": "Zero Gravity Room",
-    "description": "Disable gravity in a special chamber.",
-    "file": "mods/zero_gravity_room.zip",
-    "game": "TESTLABS VR"
+    "Name": "Zero Gravity Room",
+    "Description": "Disable gravity in a special chamber.",
+    "Url": "mods/zero_gravity_room.zip",
+    "Game": "TESTLABS VR"
   },
   {
-    "name": "Nightshift Mode",
-    "description": "Disable gravity in a special chamber.",
-    "file": "mods/Nightshift.zip",
-    "game": "TESTLABS VR"
+    "Name": "Nightshift Mode",
+    "Description": "Disable gravity in a special chamber.",
+    "Url": "mods/Nightshift.zip",
+    "Game": "TESTLABS VR"
   },
   {
-    "name": "Chaos Rising",
-    "description": "Disable gravity in a special chamber.",
-    "file": "mods/ChaosRising.zip",
-    "game": "TESTLABS VR"
+    "Name": "Chaos Rising",
+    "Description": "Disable gravity in a special chamber.",
+    "Url": "mods/ChaosRising.zip",
+    "Game": "TESTLABS VR"
   },
   {
-    "name": "Visual FX Pack",
-    "description": "Disable gravity in a special chamber.",
-    "file": "mods/VFX.zip",
-    "game": "TESTLABS VR"
+    "Name": "Visual FX Pack",
+    "Description": "Disable gravity in a special chamber.",
+    "Url": "mods/VFX.zip",
+    "Game": "TESTLABS VR"
   }
 ]
