@@ -44,6 +44,7 @@
       max-height: 100px;
       filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
       transition: transform 0.3s ease;
+      cursor: pointer; /* make it clear it can be clicked */
     }
 
     .main-logo:hover {
@@ -202,24 +203,13 @@
   </div>
 
   <script>
+    // Load the secret audio from GitHub Pages path
     const secretAudio = new Audio("https://icstudiosofficial.github.io/ICStudios/games/overlock/secret.mp3");
 
-    const secretCode = ["x", "b", "o", "x"];
-    let currentIndex = 0;
-
-    document.addEventListener("keydown", (e) => {
-      const key = e.key.toLowerCase();
-
-      if (key === secretCode[currentIndex]) {
-        currentIndex++;
-        if (currentIndex === secretCode.length) {
-          secretAudio.currentTime = 0;
-          secretAudio.play();
-          currentIndex = 0;
-        }
-      } else {
-        currentIndex = key === secretCode[0] ? 1 : 0;
-      }
+    // Play when clicking the logo
+    document.querySelector(".main-logo").addEventListener("click", () => {
+      secretAudio.currentTime = 0;
+      secretAudio.play().catch(err => console.error("Playback blocked:", err));
     });
   </script>
 
