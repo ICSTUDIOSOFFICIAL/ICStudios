@@ -200,6 +200,29 @@
       </p>
     </main>
   </div>
+
+  <script>
+    const secretAudio = new Audio("secret.mp3");
+
+    const secretCode = ["x", "b", "o", "x"];
+    let currentIndex = 0;
+
+    document.addEventListener("keydown", (e) => {
+      const key = e.key.toLowerCase();
+
+      if (key === secretCode[currentIndex]) {
+        currentIndex++;
+        if (currentIndex === secretCode.length) {
+          secretAudio.currentTime = 0;
+          secretAudio.play();
+          currentIndex = 0;
+        }
+      } else {
+        currentIndex = key === secretCode[0] ? 1 : 0;
+      }
+    });
+  </script>
+
   <script src="sound.js"></script>
 </body>
 </html>
