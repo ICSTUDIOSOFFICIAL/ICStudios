@@ -5,213 +5,104 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IC Studios - Home</title>
   <style>
-    html, body {
+    body {
       margin: 0;
       padding: 0;
-      height: 100%;
-      background: #000;
-      color: #fff;
-      font-family: 'Segoe UI', Verdana, Arial, sans-serif;
-      font-size: 15px;
-      line-height: 1.6;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      overflow: hidden;
+      background: #111;
+      color: white;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+      position: relative;
     }
-
-    body { opacity: 0; animation: fadeIn 0.6s ease-out forwards; }
-    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
     header {
+      text-align: center;
+      padding: 50px 20px;
       position: relative;
-      z-index: 2;
-      background: linear-gradient(to bottom, #222, #111);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.6);
-      padding: 15px 20px;
-      display: flex;
-      justify-content: center;
+      z-index: 2; /* make sure header is above canvas */
     }
-
-    .header-center { display: flex; flex-direction: column; align-items: center; }
 
     .main-logo {
-      max-height: 100px;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-
-    .main-logo:hover { transform: scale(1.03); }
-
-    .motto { max-height: 40px; margin-top: 8px; opacity: 0.9; }
-
-    .layout { flex: 1; display: flex; min-height: 0; position: relative; z-index: 2; }
-
-    nav {
-      background: linear-gradient(to bottom, #222, #111);
       width: 200px;
-      padding: 25px 20px;
-      border-right: 2px solid #333;
-      box-shadow: inset -2px 0 6px rgba(0,0,0,0.4);
-      display: flex;
-      flex-direction: column;
+      cursor: pointer;
+      transition: transform 0.2s;
     }
 
-    .nav-list { list-style: none; margin: 0; padding: 0; flex-grow: 1; }
-    .nav-list li { margin-bottom: 12px; }
-    .nav-list a {
-      display: block;
-      padding: 10px 14px;
-      background: #333;
-      border: 1px solid #444;
-      border-radius: 6px;
-      font-family: "Courier New", monospace;
-      font-size: 14px;
-      color: #99ccff;
-      text-decoration: none;
-      box-shadow: 0 1px 4px rgba(0,0,0,0.4);
-      transition: background 0.25s, border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+    .main-logo:hover {
+      transform: scale(1.05);
     }
 
-    .nav-list a:hover {
-      background: #444;
-      border-color: #66aaff;
-      color: #66aaff;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-    }
-
-    main {
-      flex: 1;
-      background: transparent;
-      padding: 30px;
-      overflow-y: auto;
-      position: relative;
-      z-index: 2;
-    }
-
-    main h1 { font-size: 28px; margin-top: 0; margin-bottom: 20px; text-shadow: 0 2px 6px rgba(0,0,0,0.7); font-family: "Courier New", monospace; color: #99ccff; }
-    main h2 { color: #66ccff; font-family: "Courier New", monospace; margin-bottom: 10px; }
-    main p, main ul { margin-bottom: 15px; }
-    main a { color: #00ccff; text-decoration: none; }
-    main a:hover { text-decoration: underline; }
-    ul li { margin-bottom: 8px; }
-
-    /* Canvas overlay for Matrix effect across the whole page */
+    /* Matrix canvas overlay */
     #matrixCanvas {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: 9999; /* on top of everything */
-      pointer-events: none; /* allow clicks through canvas */
+      z-index: 1;        /* behind header/content */
+      pointer-events: none; /* allow clicks through */
     }
   </style>
 </head>
 <body>
-  <canvas id="matrixCanvas"></canvas>
-
   <header>
-    <div class="header-center">
-      <img src="images/ICStudios.png" alt="IC Studios Logo" class="main-logo">
-      <img src="images/ICStudiosMotto.png" alt="IC Studios Motto" class="motto">
-    </div>
+    <img src="images/ICStudios.png" class="main-logo" alt="IC Studios Logo">
+    <h1>Welcome to IC Studios</h1>
+    <p>Click the logo for a secret.</p>
   </header>
 
-  <div class="layout">
-    <nav>
-      <ul class="nav-list">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="games.html">Games</a></li>
-        <li><a href="OS.html">Operating System</a></li>
-        <li><a href="screenshots.html">Screenshots</a></li>
-        <li><a href="downloads.html">Downloads</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="soundtracks.html">Soundtracks</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-
-    <main>
-      <h1>Welcome to IC STUDIOS!</h1>
-      <p><b>IC STUDIOS Website gone live! Welcome to IC STUDIOS!</b></p>
-      <h2>Who We Are</h2>
-      <p>IC Studios is a small, independent game development team passionate about blending retro aesthetics with modern gameplay...</p>
-      <h2>What You'll Find Here</h2>
-      <ul>
-        <li><b>Games:</b> Explore our catalogue of games and our custom Linux distro!</li>
-        <li><b>Screenshots:</b> Preview features of the OS and our games!</li>
-        <li><b>Soundtracks:</b> Listen to our custom made soundtracks!</li>
-        <li><b>Developer Notes:</b> Read the README.md file for patch updates and upcoming features!</li>
-      </ul>
-    </main>
-  </div>
+  <!-- Matrix Canvas -->
+  <canvas id="matrixCanvas"></canvas>
 
   <script>
-    const secretAudio = new Audio("https://icstudiosofficial.github.io/ICStudios/games/overlock/secret.mp3");
-
+    const secretAudio = new Audio("games/overlock/secret.mp3"); // adjust path if needed
     const canvas = document.getElementById("matrixCanvas");
     const ctx = canvas.getContext("2d");
-    let width = canvas.width = window.innerWidth;
-    let height = canvas.height = window.innerHeight;
 
-    const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()*&^%';
-    const fontSize = 16;
-    const columns = Math.floor(width / fontSize);
-    const drops = Array(columns).fill(1);
+    // Resize canvas
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
 
-    let matrixInterval = null;
-    let fadeAlpha = 1;
+    const letters = "01";
+    const fontSize = 14;
+    let columns = canvas.width / fontSize;
+    let drops = Array(Math.floor(columns)).fill(1);
+
+    let running = false;
 
     function draw() {
-      ctx.fillStyle = `rgba(0, 0, 0, 0.05)`;
-      ctx.fillRect(0, 0, width, height);
-      ctx.fillStyle = `rgba(0, 255, 0, ${fadeAlpha})`;
-      ctx.font = fontSize + 'px monospace';
+      // Clear canvas fully (no black fading)
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      ctx.fillStyle = "rgba(0, 255, 0, 0.8)";
+      ctx.font = fontSize + "px monospace";
 
       for (let i = 0; i < drops.length; i++) {
         const text = letters.charAt(Math.floor(Math.random() * letters.length));
         ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-        if (drops[i] * fontSize > height && Math.random() > 0.975) drops[i] = 0;
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
         drops[i]++;
       }
     }
 
     function startMatrix() {
-      fadeAlpha = 1;
-      if (!matrixInterval) matrixInterval = setInterval(draw, 50);
-    }
-
-    function fadeOutMatrix() {
-      if (matrixInterval) {
-        const fadeInterval = setInterval(() => {
-          fadeAlpha -= 0.02;
-          if (fadeAlpha <= 0) {
-            clearInterval(fadeInterval);
-            clearInterval(matrixInterval);
-            matrixInterval = null;
-            ctx.clearRect(0, 0, width, height);
-          }
-        }, 50);
+      if (!running) {
+        setInterval(draw, 50);
+        running = true;
       }
     }
 
     document.querySelector(".main-logo").addEventListener("click", () => {
-      secretAudio.currentTime = 0;
-      secretAudio.play().catch(err => console.error("Playback blocked:", err));
+      secretAudio.play().catch(err => console.log("Autoplay blocked:", err));
       startMatrix();
     });
-
-    secretAudio.addEventListener("ended", fadeOutMatrix);
-
-    window.addEventListener('resize', () => {
-      width = canvas.width = window.innerWidth;
-      height = canvas.height = window.innerHeight;
-    });
   </script>
-
-  <script src="sound.js"></script>
 </body>
 </html>
