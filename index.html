@@ -5,21 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>IC Studios - Home</title>
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
-      background: #111;
-      color: white;
+      height: 100%;
       font-family: Arial, sans-serif;
-      overflow-x: hidden;
-      position: relative;
+      background: #111; /* keep your dark background */
+      color: white;
     }
 
     header {
       text-align: center;
       padding: 50px 20px;
       position: relative;
-      z-index: 2; /* make sure header is above canvas */
+      z-index: 2; /* make sure it's above canvas */
     }
 
     .main-logo {
@@ -32,15 +31,15 @@
       transform: scale(1.05);
     }
 
-    /* Matrix canvas overlay */
+    /* Matrix overlay canvas */
     #matrixCanvas {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: 1;        /* behind header/content */
-      pointer-events: none; /* allow clicks through */
+      z-index: 1;          /* sits behind your content */
+      pointer-events: none; /* let clicks pass through */
     }
   </style>
 </head>
@@ -51,11 +50,18 @@
     <p>Click the logo for a secret.</p>
   </header>
 
-  <!-- Matrix Canvas -->
+  <!-- Your existing content would go here -->
+  <main style="position: relative; z-index: 2; padding: 20px;">
+    <p>This is your homepage content. Add whatever sections, links, or text you want here.</p>
+  </main>
+
+  <!-- Matrix Canvas Overlay -->
   <canvas id="matrixCanvas"></canvas>
 
   <script>
     const secretAudio = new Audio("games/overlock/secret.mp3"); // adjust path if needed
+    const logo = document.querySelector(".main-logo");
+
     const canvas = document.getElementById("matrixCanvas");
     const ctx = canvas.getContext("2d");
 
@@ -71,13 +77,10 @@
     const fontSize = 14;
     let columns = canvas.width / fontSize;
     let drops = Array(Math.floor(columns)).fill(1);
-
     let running = false;
 
     function draw() {
-      // Clear canvas fully (no black fading)
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+      ctx.clearRect(0, 0, canvas.width, canvas.height); // keep page visible
       ctx.fillStyle = "rgba(0, 255, 0, 0.8)";
       ctx.font = fontSize + "px monospace";
 
@@ -99,7 +102,7 @@
       }
     }
 
-    document.querySelector(".main-logo").addEventListener("click", () => {
+    logo.addEventListener("click", () => {
       secretAudio.play().catch(err => console.log("Autoplay blocked:", err));
       startMatrix();
     });
