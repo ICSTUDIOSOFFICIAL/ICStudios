@@ -84,9 +84,11 @@
 
     main {
       flex: 1;
-      background: #000;
+      background: transparent;
       padding: 30px;
       overflow-y: auto;
+      position: relative;
+      z-index: 2;
     }
 
     main h1 { font-size: 28px; margin-top: 0; margin-bottom: 20px; text-shadow: 0 2px 6px rgba(0,0,0,0.7); font-family: "Courier New", monospace; color: #99ccff; }
@@ -96,14 +98,15 @@
     main a:hover { text-decoration: underline; }
     ul li { margin-bottom: 8px; }
 
+    /* Canvas overlay for Matrix effect across the whole page */
     #matrixCanvas {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      z-index: 1;
-      pointer-events: none;
+      z-index: 9999; /* on top of everything */
+      pointer-events: none; /* allow clicks through canvas */
     }
   </style>
 </head>
@@ -160,7 +163,7 @@
     const drops = Array(columns).fill(1);
 
     let matrixInterval = null;
-    let fadeAlpha = 1; // for fade out
+    let fadeAlpha = 1;
 
     function draw() {
       ctx.fillStyle = `rgba(0, 0, 0, 0.05)`;
@@ -177,7 +180,7 @@
     }
 
     function startMatrix() {
-      fadeAlpha = 1; // reset alpha
+      fadeAlpha = 1;
       if (!matrixInterval) matrixInterval = setInterval(draw, 50);
     }
 
