@@ -167,10 +167,11 @@
     const fontSize = 16;
     let columns = Math.floor(canvas.width / fontSize);
     let drops = Array(columns).fill(1);
-    let running = false;
+
+    let matrixInterval = null;
 
     function draw() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height); // no dark background
+      ctx.clearRect(0, 0, canvas.width, canvas.height); // transparent background
       ctx.fillStyle = 'rgba(0, 255, 0, 0.8)';
       ctx.font = fontSize + 'px monospace';
 
@@ -184,9 +185,16 @@
     }
 
     function startMatrix() {
-      if (!running) {
-        setInterval(draw, 50);
-        running = true;
+      if (!matrixInterval) {
+        matrixInterval = setInterval(draw, 50);
+      }
+    }
+
+    function stopMatrix() {
+      if (matrixInterval) {
+        clearInterval(matrixInterval);
+        matrixInterval = null;
+        ctx.clearRect(0, 0, canvas.width, canvas.height); // clear remaining letters
       }
     }
 
@@ -195,6 +203,8 @@
       secretAudio.play().catch(err => console.log("Autoplay blocked:", err));
       startMatrix();
     });
+
+    secretAudio.addEventListener("ended", stopMatrix);
   </script>
 </body>
 </html>
