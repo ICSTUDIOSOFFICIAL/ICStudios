@@ -1,3 +1,10 @@
+~~~
+SEEMS TO NOT WORK, MIGHT END UP DEPRICATING IF ISSUE IS NON FIXABLE
+~~~
+
+
+
+
 // sound.js
 document.addEventListener("DOMContentLoaded", () => {
   const audio = document.createElement("audio");
@@ -24,3 +31,4 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
