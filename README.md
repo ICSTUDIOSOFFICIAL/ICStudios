@@ -4,7 +4,7 @@ IC Studios is a small, independent team focused on building games, tools, and we
 We’re not a big studio, we’re not corporate, and we’re definitely not chasing trends.  
 We make the kind of stuff we *want* to play – projects that feel raw, experimental, and personal.
 We are 100% AGAINST the use of Artificial Intelligence (Generative Specifically) and WILL NOT use them in our projects outside of help.
-
+IC Studios is currently accepting Volunteers to help build the platform! Send us a support email if you want to help out!
 ---
 
 ## 🎮 What We Do
