@@ -108,6 +108,23 @@
       z-index: 1; /* behind content */
       pointer-events: none; /* allow clicks */
     }
+
+    /* Secret ? button */
+    #secret-btn {
+      position: fixed;
+      bottom: 8px;
+      right: 12px;
+      font-family: monospace;
+      font-size: 20px;
+      color: #0a0a0a; /* almost black */
+      cursor: pointer;
+      z-index: 3;
+      user-select: none;
+      transition: color 0.2s;
+    }
+    #secret-btn:hover {
+      color: #222; /* slightly lighter on hover */
+    }
   </style>
 </head>
 <body>
@@ -149,9 +166,13 @@
     </main>
   </div>
 
+  <!-- Hidden ? button -->
+  <div id="secret-btn">?</div>
+
   <script>
-    const secretAudio = new Audio("https://icstudiosofficial.github.io/ICStudios/games/overlock/secret.mp3");
+    const secretAudio = new Audio("https://icstudiosofficial.github.io/ICStudios/scream.mp3");
     const logo = document.querySelector(".main-logo");
+    const secretBtn = document.getElementById("secret-btn");
 
     const canvas = document.getElementById("matrixCanvas");
     const ctx = canvas.getContext("2d");
@@ -205,6 +226,11 @@
     });
 
     secretAudio.addEventListener("ended", stopMatrix);
+
+    secretBtn.addEventListener("click", () => {
+      secretAudio.currentTime = 0;
+      secretAudio.play().catch(err => console.log("Autoplay blocked:", err));
+    });
   </script>
 </body>
 </html>
