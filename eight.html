@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IC Studios - Home</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: #000;
+      color: #fff;
+      font-family: 'Segoe UI', Verdana, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+
+    body { opacity: 0; animation: fadeIn 0.6s ease-out forwards; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    header {
+      position: relative;
+      z-index: 2;
+      background: linear-gradient(to bottom, #222, #111);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .header-center { display: flex; flex-direction: column; align-items: center; }
+
+    .main-logo {
+      max-height: 100px;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+    .main-logo:hover { transform: scale(1.03); }
+    .motto { max-height: 40px; margin-top: 8px; opacity: 0.9; }
+
+    .layout { flex: 1; display: flex; min-height: 0; position: relative; z-index: 2; }
+
+    nav {
+      background: linear-gradient(to bottom, #222, #111);
+      width: 200px;
+      padding: 25px 20px;
+      border-right: 2px solid #333;
+      box-shadow: inset -2px 0 6px rgba(0,0,0,0.4);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .nav-list { list-style: none; margin: 0; padding: 0; flex-grow: 1; }
+    .nav-list li { margin-bottom: 12px; }
+    .nav-list a {
+      display: block;
+      padding: 10px 14px;
+      background: #333;
+      border: 1px solid #444;
+      border-radius: 6px;
+      font-family: "Courier New", monospace;
+      font-size: 14px;
+      color: #99ccff;
+      text-decoration: none;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.4);
+      transition: background 0.25s, border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+    }
+    .nav-list a:hover {
+      background: #444;
+      border-color: #66aaff;
+      color: #66aaff;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+
+    main {
+      flex: 1;
+      background: transparent;
+      padding: 30px;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Custom button */
+    .big-button {
+      width: 400px;
+      height: 400px;
+      border: none;
+      border-radius: 50%;
+      background: url("https://www.myinstants.com/media/images/button.png") no-repeat center/cover;
+      cursor: pointer;
+      transition: transform 0.2s;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.6);
+    }
+    .big-button:hover { transform: scale(1.05); }
+    .big-button:active { transform: scale(0.95); }
+
+    /* Canvas overlay */
+    #matrixCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    /* Secret ? button */
+    #secret-btn {
+      position: fixed;
+      bottom: 8px;
+      right: 12px;
+      font-family: monospace;
+      font-size: 20px;
+      color: #0a0a0a;
+      cursor: pointer;
+      z-index: 3;
+      user-select: none;
+      transition: color 0.2s;
+    }
+    #secret-btn:hover { color: #222; }
+  </style>
+</head>
+<body>
+  <canvas id="matrixCanvas"></canvas>
+
+  <header>
+    <div class="header-center">
+      <img src="images/ICStudios.png" alt="IC Studios Logo" class="main-logo">
+      <img src="images/ICStudiosMotto.png" alt="IC Studios Motto" class="motto">
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav>
+      <ul class="nav-list">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="games.html">Games</a></li>
+        <li><a href="screenshots.html">Screenshots</a></li>
+        <li><a href="downloads.html">Downloads</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="soundtracks.html">Soundtracks</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <button class="big-button" id="play-btn"></button>
+    </main>
+  </div>
+
+  <!-- Hidden ? button -->
+  <div id="secret-btn">?</div>
+
+<script>
+  // Big red button sound
+  const playBtn = document.getElementById("play-btn");
+  const buttonSound = new Audio("https://www.myinstants.com/media/sounds/eight_1.mp3");
+  playBtn.addEventListener("click", () => {
+    buttonSound.currentTime = 0;
+    buttonSound.play();
+  });
+
+  // Secret matrix effect
+  const secretAudio = new Audio("https://icstudiosofficial.github.io/ICStudios/games/overlock/secret.mp3");
+  const logo = document.querySelector(".main-logo");
+
+  const canvas = document.getElementById("matrixCanvas");
+  const ctx = canvas.getContext("2d");
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  }
+  window.addEventListener("resize", resizeCanvas);
+  resizeCanvas();
+
+  const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()*&^%';
+  const fontSize = 16;
+  let columns = Math.floor(canvas.width / fontSize);
+  let drops = Array(columns).fill(1);
+  let matrixInterval = null;
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = 'rgba(0, 255, 0, 0.8)';
+    ctx.font = fontSize + 'px monospace';
+
+    for (let i = 0; i < drops.length; i++) {
+      const text = letters.charAt(Math.floor(Math.random() * letters.length));
+      ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+      if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+      drops[i]++;
+    }
+  }
+
+  function startMatrix() {
+    if (!matrixInterval) matrixInterval = setInterval(draw, 50);
+  }
+  function stopMatrix() {
+    if (matrixInterval) {
+      clearInterval(matrixInterval);
+      matrixInterval = null;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    }
+  }
+
+  logo.addEventListener("click", () => {
+    secretAudio.currentTime = 0;
+    secretAudio.play().catch(err => console.log("Autoplay blocked:", err));
+    startMatrix();
+  });
+  secretAudio.addEventListener("ended", stopMatrix);
+
+  // Scream secret
+  const screamAudio = new Audio("https://icstudiosofficial.github.io/ICStudios/scream.mp3");
+  const secretBtn = document.getElementById("secret-btn");
+  secretBtn.addEventListener("click", () => {
+    screamAudio.currentTime = 0;
+    screamAudio.play().catch(err => console.log("Autoplay blocked:", err));
+  });
+</script>
+</body>
+</html>
