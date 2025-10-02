@@ -19,8 +19,10 @@
       min-height: 100vh;
       overflow: hidden;
     }
+
     body { opacity: 0; animation: fadeIn 0.6s ease-out forwards; }
     @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
     header {
       position: relative;
       z-index: 2;
@@ -30,16 +32,22 @@
       display: flex;
       justify-content: center;
     }
+
     .header-center { display: flex; flex-direction: column; align-items: center; }
+
     .main-logo {
       max-height: 100px;
       filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
       transition: transform 0.3s ease;
       cursor: pointer;
     }
+
     .main-logo:hover { transform: scale(1.03); }
+
     .motto { max-height: 40px; margin-top: 8px; opacity: 0.9; }
+
     .layout { flex: 1; display: flex; min-height: 0; position: relative; z-index: 2; }
+
     nav {
       background: linear-gradient(to bottom, #222, #111);
       width: 200px;
@@ -49,6 +57,7 @@
       display: flex;
       flex-direction: column;
     }
+
     .nav-list { list-style: none; margin: 0; padding: 0; flex-grow: 1; }
     .nav-list li { margin-bottom: 12px; }
     .nav-list a {
@@ -64,6 +73,7 @@
       box-shadow: 0 1px 4px rgba(0,0,0,0.4);
       transition: background 0.25s, border-color 0.25s, transform 0.25s, box-shadow 0.25s;
     }
+
     .nav-list a:hover {
       background: #444;
       border-color: #66aaff;
@@ -71,6 +81,7 @@
       transform: translateY(-2px);
       box-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
+
     main {
       flex: 1;
       background: transparent;
@@ -79,12 +90,14 @@
       position: relative;
       z-index: 2;
     }
+
     main h1 { font-size: 28px; margin-top: 0; margin-bottom: 20px; text-shadow: 0 2px 6px rgba(0,0,0,0.7); font-family: "Courier New", monospace; color: #99ccff; }
     main h2 { color: #66ccff; font-family: "Courier New", monospace; margin-bottom: 10px; }
     main p, main ul { margin-bottom: 15px; }
     main a { color: #00ccff; text-decoration: none; }
     main a:hover { text-decoration: underline; }
     ul li { margin-bottom: 8px; }
+
     #matrixCanvas {
       position: fixed;
       top: 0;
@@ -94,6 +107,7 @@
       z-index: 1;
       pointer-events: none;
     }
+
     #secret-btn {
       position: fixed;
       bottom: 8px;
@@ -106,17 +120,20 @@
       user-select: none;
       transition: color 0.2s;
     }
+
     #secret-btn:hover { color: #222; }
   </style>
 </head>
 <body>
   <canvas id="matrixCanvas"></canvas>
+
   <header>
     <div class="header-center">
       <img src="images/ICStudios.png" alt="IC Studios Logo" class="main-logo">
       <img src="images/ICStudiosMotto.png" alt="IC Studios Motto" class="motto">
     </div>
   </header>
+
   <div class="layout">
     <nav>
       <ul class="nav-list">
@@ -129,6 +146,7 @@
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
+
     <main>
       <h1>Welcome to IC STUDIOS™!</h1>
       <p><b>OVERLOCK Development Cycle is going great! Projected release late 2025 / early 2026!</b></p>
@@ -143,20 +161,25 @@
       </ul>
     </main>
   </div>
+
   <div id="secret-btn">?</div>
+
   <script>
     const secretAudio = new Audio("https://icstudiosofficial.github.io/ICStudios/games/overlock/secret.mp3");
     const logo = document.querySelector(".main-logo");
     const canvas = document.getElementById("matrixCanvas");
     const ctx = canvas.getContext("2d");
+
     function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
     window.addEventListener("resize", resizeCanvas);
     resizeCanvas();
+
     const letters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()*&^%';
     const fontSize = 16;
     let columns = Math.floor(canvas.width / fontSize);
     let drops = Array(columns).fill(1);
     let matrixInterval = null;
+
     function draw() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.fillStyle = 'rgba(0, 255, 0, 0.8)';
@@ -168,9 +191,11 @@
         drops[i]++;
       }
     }
+
     function startMatrix() {
       if (!matrixInterval) { matrixInterval = setInterval(draw, 50); }
     }
+
     function stopMatrix() {
       if (matrixInterval) {
         clearInterval(matrixInterval);
@@ -178,12 +203,15 @@
         ctx.clearRect(0, 0, canvas.width, canvas.height);
       }
     }
+
     logo.addEventListener("click", () => {
       secretAudio.currentTime = 0;
       secretAudio.play().catch(err => console.log("Autoplay blocked:", err));
       startMatrix();
     });
+
     secretAudio.addEventListener("ended", stopMatrix);
+
     const screamAudio = new Audio("https://icstudiosofficial.github.io/ICStudios/scream.mp3");
     const secretBtn = document.getElementById("secret-btn");
     secretBtn.addEventListener("click", () => {
