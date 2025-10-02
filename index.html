@@ -126,6 +126,45 @@
       color: #222; /* slightly lighter on hover */
     }
   </style>
+   
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column; /* stack nav + main vertically */
+  }
+
+  nav {
+    width: 100%;            /* full width for the nav */
+    border-right: none;
+    border-bottom: 2px solid #333; /* optional divider */
+    padding: 15px 10px;
+    box-shadow: inset 0 -2px 6px rgba(0,0,0,0.4);
+  }
+
+  .nav-list li {
+    margin-bottom: 8px;
+  }
+
+  main {
+    padding: 15px 10px;     /* shrink padding on small screens */
+  }
+
+  header .header-center {
+    flex-direction: column;
+  }
+
+  .main-logo {
+    max-height: 70px;       /* smaller logo */
+  }
+
+  .motto {
+    max-height: 30px;
+  }
+
+  /* Optional: make font a bit bigger for readability */
+  body {
+    font-size: 16px;
+  }
+}
 </head>
 <body>
   <canvas id="matrixCanvas"></canvas>
