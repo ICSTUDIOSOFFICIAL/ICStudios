@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volunteer at IC Studios</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background: linear-gradient(to bottom, #111, #000); /* Dark gradient */
+      color: #fff;
+      font-family: 'Segoe UI', Verdana, Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    body { opacity: 0; animation: fadeIn 0.6s ease-out forwards; }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+    header {
+      position: relative;
+      z-index: 2;
+      background: linear-gradient(to bottom, #222, #111);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+      padding: 15px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .header-center { display: flex; flex-direction: column; align-items: center; }
+
+    .main-logo {
+      max-height: 100px;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .main-logo:hover { transform: scale(1.03); }
+
+    .motto { max-height: 40px; margin-top: 8px; opacity: 0.9; }
+
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center everything */
+      justify-content: flex-start;
+      padding: 40px 20px;
+      overflow-y: auto;
+      max-width: 900px;
+      margin: 0 auto;
+      background: linear-gradient(to bottom, #111, #000); /* Same gradient as body */
+      border-radius: 10px;
+    }
+
+    main h1 { 
+      font-size: 28px; 
+      margin-top: 0; 
+      margin-bottom: 20px; 
+      text-shadow: 0 2px 6px rgba(0,0,0,0.7); 
+      font-family: "Courier New", monospace; 
+      color: #66ccff; 
+      text-align: center;
+    }
+
+    main p { color: #ddd; text-align: center; }
+
+    label { display: block; margin-top: 15px; font-weight: bold; text-align: left; max-width:600px; width:100%; }
+    input, textarea {
+      width: 100%;
+      max-width: 600px;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #333;
+      background-color: #111;
+      color: #fff;
+      font-family: monospace;
+    }
+
+    button {
+      margin-top: 25px;
+      padding: 12px 25px;
+      background-color: #66ccff;
+      color: #000;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform 0.2s;
+      align-self: center; /* Center the button */
+    }
+    button:hover { transform: scale(1.05); }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center; /* Center all form fields */
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-center">
+      <img src="images/ICStudios.png" alt="IC Studios Logo" class="main-logo">
+      <img src="images/ICStudiosMotto.png" alt="IC Studios Motto" class="motto">
+    </div>
+  </header>
+
+  <main>
+    <h1>Volunteer at IC Studios</h1>
+    <p>Join our small, passionate team! Fill out the form below and it will open Gmail pre-filled to send your application to <b>icstudioscontact@gmail.com</b>.</p>
+
+    <form id="volunteerForm">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="Name" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="Email" required>
+
+      <label for="skills">Skills / Areas of Interest:</label>
+      <textarea id="skills" name="Skills" rows="4" required></textarea>
+
+      <label for="message">Additional Info / Comments:</label>
+      <textarea id="message" name="Message" rows="4"></textarea>
+
+      <button type="submit">Submit Application</button>
+    </form>
+  </main>
+
+  <script>
+    document.getElementById("volunteerForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // prevent default form submission
+
+      // Gather form data
+      const name = encodeURIComponent(document.getElementById("name").value);
+      const email = encodeURIComponent(document.getElementById("email").value);
+      const skills = encodeURIComponent(document.getElementById("skills").value);
+      const message = encodeURIComponent(document.getElementById("message").value);
+
+      // Create formatted email body
+      const body = encodeURIComponent(
+        `Volunteer Application - IC Studios\n\n` +
+        `Full Name: ${name}\n` +
+        `Email Address: ${email}\n` +
+        `Skills / Areas of Interest:\n${skills}\n\n` +
+        `Additional Info / Comments:\n${message}`
+      );
+
+      // Open Gmail compose window with prefilled to, subject, and body
+      const mailtoLink = `mailto:icstudioscontact@gmail.com?subject=Volunteer Application - IC Studios&body=${body}`;
+      window.location.href = mailtoLink;
+    });
+  </script>
+</body>
+</html>
